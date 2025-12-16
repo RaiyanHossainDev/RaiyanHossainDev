@@ -13,7 +13,7 @@ const WHM = () => {
                 </div>
                 <div className="WHM-col flex flex-col gap-[47px]">
                   <h2 className='text-[#344054] text-[64px]'>Why <span className='text-primary'>Hire me</span>?</h2>
-                  <p className='text-[20px] text-[#98A2B3] w-[444px]'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est magnam itaque error repellat nulla! Modi porro suscipit temporibus iure id.</p>
+                  <p className='text-[20px] text-[#98A2B3] w-[444px]'>I build web applications that don’t just work—they perform, engage, and grow your business. With expertise in the MERN stack and a passion for clean, efficient code, I’m ready to bring your ideas to life.</p>
                   <div className='flex gap-[98px]'>
                     <div>
                       <h3 className='text-[36px] text-[#1D2939] font-medium'>22+</h3>
