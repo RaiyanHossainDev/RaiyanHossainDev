@@ -17,7 +17,7 @@ const Footer = () => {
             <div className="footer-col">
                 <div className="footer-head flex justify-between items-center py-[44px]">
                     <h2 className='text-[64px] text-[#FCFCFD]'>Lets Connect there</h2>
-                    <Link className='flex items-center px-[34px] py-[10px] rounded-[60px] bg-[#FD853A] text-white text-[25px]' href={'#'}>Hire me <CgArrowTopRight className='text-[30px] text-white' /></Link>
+                    <Link className='relative text-[25px] border-[1px] border-[#FD853A] text-white after:content-["↗"] flex gap-[10px] items-center after:text-[0px] hover:after:text-[36px] after:transition-all after:duration-[.2s] transition-all duration-[.2s] hover:bg-primary rounded-full hover:border-[#D0D5DD] py-[16px] px-[31px] after:leading-1' href={'/contact'}>Hire me</Link>
                 </div>
                 <div className="line w-full h-[2px] bg-[#475467] my-[55px]"></div>
                <div className="footer-main flex justify-between">

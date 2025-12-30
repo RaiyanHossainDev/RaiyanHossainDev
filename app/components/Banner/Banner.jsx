@@ -35,8 +35,8 @@ const Banner = () => {
             <Image className='absolute bottom-0 left-[50%] translate-x-[-50%] w-[417px]' alt='Raiyan Hossain raiyan hossain ryan hossain raiyan hossen' src={Raiyan} />
             <div className='pb-[46px] flex justify-center'>
               <div className='rounded-full p-[10px] pr-[28px] text-white text-[25.69px] border-[2px] border-transparent backdrop-blur bg-white/10 [border-image:radial-gradient(circle,white_0%,transparent_70%)_1] flex items-center justify-center gap-[28px] translate-z-0 z-[10]'>
-                <Link className='flex bg-primary rounded-full border-[1px] border-[#D0D5DD] py-[16px] px-[31px] items-center  justify-center gap-[12px]' href={'/'}>Portfolio <RxArrowTopRight /></Link>
-                <Link href={'/'}>Hire me</Link>
+                <Link className='relative after:content-["↗"] flex gap-[10px] items-center after:text-[0px] hover:after:text-[36px] after:transition-all after:duration-[.2s] transition-all duration-[.2s] hover:bg-primary rounded-full border-[1px] border-transparent hover:border-[#D0D5DD] py-[16px] px-[31px] after:leading-1' href={'/protfollio'}>protfollio</Link>
+                <Link className='relative after:content-["↗"] flex gap-[10px] items-center after:text-[0px] hover:after:text-[36px] after:transition-all after:duration-[.2s] transition-all duration-[.2s] hover:bg-primary rounded-full border-[1px] border-transparent hover:border-[#D0D5DD] py-[16px] px-[31px] after:leading-1' href={'/contact'}>Hire me</Link>
               </div>
             </div>
         </div>
