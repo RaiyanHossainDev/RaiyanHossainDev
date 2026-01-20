@@ -16,7 +16,7 @@ const Navbar = () => {
                     </div>
                     <div className="logo">
                         <Link href={'/'}>
-                            <img src="/images/logo.png" alt="logo" className='w-[250px]'/>
+                            <img src="/images/logo.jpg" alt="logo" className='w-[160px]'/>
                         </Link>
                     </div>
                     <div className="row2">
