@@ -24,7 +24,7 @@ const WHM = () => {
                       <p className='text-[20px] text-[#667085]'>Heavy Backend Project Completed</p>
                     </div>
                   </div>
-                  <Link href={'#'} className='text-[30px] transition-all duration-150 hover:bg-primary hover:border-primary hover:text-white text-[#151515] py-[20px] px-[40px] rounded-[32px] border-[#151515] w-fit border-[1px]'>Hire me</Link>
+                  <Link href={'/contact'} className='text-[30px] transition-all duration-150 hover:bg-primary hover:border-primary hover:text-white text-[#151515] py-[20px] px-[40px] rounded-[32px] border-[#151515] w-fit border-[1px]'>Hire me</Link>
                 </div>
             </div>
         </div>

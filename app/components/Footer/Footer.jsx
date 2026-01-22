@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link'
 import React from 'react'
 import { CgArrowTopRight } from "react-icons/cg";
-import Logo from '@/public/images/logo.png';
+import Logo from '@/public/images/logo.jpg';
 import { FaFacebookSquare, FaInstagramSquare } from "react-icons/fa";
 import { IoLogoWhatsapp } from "react-icons/io";
 import { IoSend } from "react-icons/io5";
@@ -22,7 +22,7 @@ const Footer = () => {
                 <div className="line w-full h-[2px] bg-[#475467] my-[55px]"></div>
                <div className="footer-main flex justify-between">
                     <div>
-                        <Image alt='Logo logo' src={Logo} />
+                        <Image alt='Logo logo' className='w-[230px]' src={Logo} />
                         <p className='py-[34px] text-[20px] text-[#FCFCFD] w-[635px]'>I’m a curious creator who enjoys building meaningful digital experiences. I love exploring new ideas, refining details, and turning concepts into simple, elegant solutions that reflect both purpose and personality.</p>
                         <div className='flex gap-[7px] items-center'>
                             <a target='_blank' href="https://www.facebook.com/profile.php?id=61578419153609"><FaFacebookSquare className='text-[25px] text-white' /></a>
