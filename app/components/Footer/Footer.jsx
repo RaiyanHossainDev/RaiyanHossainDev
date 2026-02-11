@@ -9,10 +9,10 @@ import { IoSend } from "react-icons/io5";
 
 
 
-
+// Footer top margin value = 97px
 const Footer = () => {
   return (
-    <footer className='mt-[97px] bg-[#272727] rounded-t-[24px]'>
+    <footer className='mt-[20px] bg-[#272727] rounded-t-[24px]'>
         <div className="container">
             <div className="footer-col">
                 <div className="footer-head flex justify-between items-center py-[44px]">

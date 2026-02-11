@@ -21,7 +21,7 @@ const Navbar = () => {
                     </div>
                     <div className="row2">
                         <NavLink children={"Resume"} href={"/resume"} />
-                        <NavLink children={"Protfollio"} href={"/protfollio"} />
+                        <NavLink children={"Portfolio"} href={"/portfolio"} />
                         <NavLink children={"Contact"} href={"/contact"} />
                     </div>
                 </div>

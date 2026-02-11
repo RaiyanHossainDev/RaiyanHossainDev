@@ -16,7 +16,7 @@ const WorkExp = () => {
                         </div>
                         <div>
                             <h2 className='text-[#E42625] text-[40px] leading-12 font-semibold'>Creative IT Institute</h2>
-                            <p className='text-[#98A2B3] text-[20px]'>22nd May, 2025 - 4 December, 2025</p>
+                            <p className='text-[#98A2B3] text-[20px]'>22nd May, 2025 - 28 November, 2025</p>
                         </div>
                         <div>
                             <h2 className='text-[#E42625] text-[40px] leading-12 font-semibold'>Creative IT Institute</h2>
@@ -42,9 +42,18 @@ const WorkExp = () => {
             </div>
             <div className="line w-full h-[2px] bg-gray-200 my-[20px]"></div>
             <div className='flex justify-around'>
-                <a target='_blank' href="/images/certificate.pdf" rel="noreferrer">
-                    <img className='w-[400px] border-[2px] border-primary rounded-2xl' src="/images/certificate.jpg" alt="" />
-                </a>
+                <div className='flex flex-col gap-[7px] items-center'>
+                    <p className='font-semibold text-primary text-xl'>Certification for Frontend Development </p>
+                    <a target='_blank' href="/images/certificateFDR.pdf" rel="noreferrer">
+                        <img className='w-[400px] border-[2px] border-primary rounded-2xl' src="/images/certificateFDR.jpg" alt="" />
+                    </a>
+                </div>
+                <div className='flex flex-col gap-[7px] items-center'>
+                    <p className='font-semibold text-primary text-xl'>Certification for Backend Development </p>
+                    <a target='_blank' href="/images/certificateNode.pdf" rel="noreferrer">
+                        <img className='w-[400px] border-[2px] border-primary rounded-2xl' src="/images/certificateNode.jpg" alt="" />
+                    </a>
+                </div>
             </div>
         </div>
     </section>
