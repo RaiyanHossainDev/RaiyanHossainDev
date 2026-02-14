@@ -1,5 +1,11 @@
 import React from "react";
 
+
+export const metadata = {
+  title: "Services | Web Development & Design by Raiyan H.",
+  description: "Explore the services offered by Raiyan H., including web development, frontend and backend solutions, and custom web design.",
+}
+
 const services = [
   {
     title: "Frontend Development",

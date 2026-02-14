@@ -10,7 +10,7 @@ export default function NavLink({ href, children }) {
   return (
     <Link
       href={href}
-      className={isActive ? "py-[20px] px-[40px] text-white text-[20px] inline-block bg-primary rounded-[60px] transition-all duration-100" : "hover:rotate-[-10deg] hover:scale-[1.1] hover:text-primary py-[20px] px-[40px] text-white text-[20px] inline-block rounded-[60px] transition-all duration-100"}
+      className={isActive ? "py-[20px] px-[40px] text-white text-[20px] inline-block bg-primary rounded-[60px] transition-all duration-100" : " hover:scale-[1.2] py-[20px] px-[40px] text-white text-[20px] inline-block rounded-[60px] transition-all duration-100"}
     >
       {children}
     </Link>

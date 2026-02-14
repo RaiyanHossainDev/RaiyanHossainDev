@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link'
 import React from 'react'
 import { CgArrowTopRight } from "react-icons/cg";
-import Logo from '@/public/images/logo.jpg';
+import Logo from '@/public/images/logo2.png';
 import { FaFacebookSquare, FaInstagramSquare } from "react-icons/fa";
 import { IoLogoWhatsapp } from "react-icons/io";
 import { IoSend } from "react-icons/io5";

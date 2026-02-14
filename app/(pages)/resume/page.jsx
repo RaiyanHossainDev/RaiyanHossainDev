@@ -1,6 +1,11 @@
 import { CourseCard, SkillBlock } from '@/app/components/ResumeHelper/ResumeHelper'
 import React from 'react'
 
+export const metadata = {
+  title: "Resume | Raiyan H. – Full-Stack Developer",
+  description: "View the professional resume of Raiyan H., showcasing education, skills, projects, and work experience as a full-stack developer.",
+}
+
 const revalidate = 43200 // Revalidate every 12 hours (43200 seconds)
 
 const page = () => {
