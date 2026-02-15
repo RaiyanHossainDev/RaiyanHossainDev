@@ -1,12 +1,6 @@
 'use client';
 import { useState } from "react";
 
-// export const metadata = {
-//   title: "Portfolio | Projects by Raiyan H.",
-//   description: "Check out the portfolio of Raiyan H., featuring web development projects, full-stack applications, and creative coding solutions.",
-// }
-
-
 const allProjects = [
   // Landing Pages
   {
@@ -87,10 +81,9 @@ const allProjects = [
 
 const categories = ["All", "Landing", "UI", "Full-Stack"];
 
-const ProjectsPage = () => {
+const page = () => {
   const [selectedCategory, setSelectedCategory] = useState("All");
 
-  // Group projects by category
   const groupedProjects = allProjects.reduce((acc, project) => {
     if (!acc[project.category]) acc[project.category] = [];
     acc[project.category].push(project);
@@ -99,65 +92,62 @@ const ProjectsPage = () => {
 
   return (
     <>
-    {/* Top Cover */}
-    <section className='pt-[157px] pb-[200px] bg-primary'>
-        <div className="container">
-            <h1 className='font-bold text-[40px] text-white text-center tracking-tight'>My Portfolio</h1>
-            <p className='w-[810px] text-[20px] text-white text-center mx-auto mt-[24px]'>Explore my design services, from user interface and experience to prototyping and testing. Let's craft exceptional digital experiences together.</p>
-        </div>
-        <div className='w-[200px] h-[2px] bg-white rounded-full mx-auto mt-[40px]' />
-    </section>
-
-    {/* Main Content */}
-    <section className="relative overflow-hidden px-6 py-24 md:px-12 lg:px-24 mt-[-195px]">
-      {/* Background accent */}
-      <div className="pointer-events-none absolute -top-40 -left-40 h-[500px] w-[500px] rounded-full bg-[#FD853A]/20 blur-3xl" />
-
-      <div className="relative mx-auto max-w-6xl">
-        {/* HERO */}
-        <div className="max-w-3xl">
-          <h1 className="text-5xl font-extrabold leading-tight text-white">
-            Selected Work
-            <span className="block text-[#272727]">
-              Real projects, real code
-            </span>
+      {/* Top Cover */}
+      <section className='pt-[157px] pb-[200px] bg-primary px-4 sm:px-6 lg:px-24'>
+        <div className="container mx-auto">
+          <h1 className='font-bold text-3xl sm:text-4xl md:text-5xl text-white text-center tracking-tight'>
+            My Portfolio
           </h1>
-
-          <p className="mt-6 text-lg text-gray-600">
-            Explore my projects grouped by category, or filter them using the
-            buttons below.
+          <p className='max-w-[810px] w-full text-base sm:text-lg md:text-xl text-white text-center mx-auto mt-6'>
+            Explore my design services, from user interface and experience to prototyping and testing. Let's craft exceptional digital experiences together.
           </p>
         </div>
+        <div className='w-24 sm:w-32 h-1 bg-white rounded-full mx-auto mt-10' />
+      </section>
 
-        {/* CATEGORY FILTER */}
-        <div className="mt-12 flex flex-wrap gap-4">
-          {categories.map((cat) => (
-            <button
-              key={cat}
-              onClick={() => setSelectedCategory(cat)}
-              className={`rounded-full px-6 py-2 text-sm font-medium transition
-                ${
-                  selectedCategory === cat
+      {/* Main Content */}
+      <section className="relative overflow-hidden px-4 sm:px-6 lg:px-24 py-24 mt-[-195px]">
+        {/* Background accent */}
+        <div className="pointer-events-none absolute -top-40 -left-40 h-[500px] w-[500px] rounded-full bg-[#FD853A]/20 blur-3xl" />
+
+        <div className="relative mx-auto max-w-6xl">
+          {/* HERO */}
+          <div className="max-w-3xl">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold leading-tight text-white">
+              Selected Work
+              <span className="block text-[#272727]">Real projects, real code</span>
+            </h1>
+
+            <p className="mt-6 text-base sm:text-lg text-gray-600">
+              Explore my projects grouped by category, or filter them using the buttons below.
+            </p>
+          </div>
+
+          {/* CATEGORY FILTER */}
+          <div className="mt-12 flex flex-wrap gap-2 sm:gap-4 justify-center">
+            {categories.map((cat) => (
+              <button
+                key={cat}
+                onClick={() => setSelectedCategory(cat)}
+                className={`rounded-full px-4 sm:px-6 py-2 text-sm sm:text-base font-medium transition
+                  ${selectedCategory === cat
                     ? "bg-[#FD853A] text-white"
                     : "bg-gray-100 text-[#272727] hover:bg-[#FD853A]/20"
-                }`}
-            >
-              {cat}
-            </button>
-          ))}
-        </div>
+                  }`}
+              >
+                {cat}
+              </button>
+            ))}
+          </div>
 
-        {/* PROJECTS */}
-        <div className="mt-16 space-y-16">
-          {selectedCategory === "All"
-            ? // Show all grouped by category
-              Object.entries(groupedProjects).map(([category, projects]) => (
+          {/* PROJECTS */}
+          <div className="mt-16 space-y-16">
+            {selectedCategory === "All"
+              ? Object.entries(groupedProjects).map(([category, projects]) => (
                 <div key={category}>
-                  <h2 className="mb-8 text-3xl md:text-4xl font-extrabold text-[#272727] uppercase tracking-widest 
-                                relative inline-block before:absolute before:-bottom-2 before:left-0 before:h-1 
-                                before:w-16 before:bg-[#FD853A] before:rounded-full ">
+                  <h2 className="mb-8 text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#272727] uppercase tracking-widest relative inline-block before:absolute before:-bottom-2 before:left-0 before:h-1 before:w-16 before:bg-[#FD853A] before:rounded-full">
                     {category}
-                    </h2>
+                  </h2>
                   <div className="space-y-12">
                     {projects.map((project, i) => (
                       <ProjectCard key={project.title} project={project} index={i} />
@@ -165,73 +155,52 @@ const ProjectsPage = () => {
                   </div>
                 </div>
               ))
-            : // Show only selected category
-              groupedProjects[selectedCategory]?.map((project, i) => (
+              : groupedProjects[selectedCategory]?.map((project, i) => (
                 <ProjectCard key={project.title} project={project} index={i} />
-              ))}
+              ))
+            }
+          </div>
+
+          {/* PROOF */}
+          <div className="mt-36 rounded-3xl bg-[#272727] px-6 sm:px-12 lg:px-24 py-16 text-center text-white">
+            <p className="text-sm uppercase tracking-widest text-[#FD853A]">Still unsure?</p>
+            <h2 className="mt-4 text-2xl sm:text-3xl md:text-4xl font-extrabold">Don’t take my word for it</h2>
+            <p className="mt-4 text-gray-300">Explore the code, run the apps, and see how everything is built.</p>
+            <a
+              href="https://github.com/raiyanhossaindev"
+              target="_blank"
+              className="mt-10 inline-flex items-center gap-2 rounded-full bg-[#FD853A] px-6 sm:px-10 py-3 sm:py-4 text-sm sm:text-base font-semibold text-white transition hover:scale-105"
+            >
+              Visit My GitHub →
+            </a>
+          </div>
+
+          {/* CONTACT */}
+          <div className="mt-32 text-center px-4 sm:px-0">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#272727]">
+              Want to build something together?
+            </h2>
+            <p className="mt-4 text-gray-600 text-base sm:text-lg">
+              I’m open to internships, junior roles, and freelance projects.
+            </p>
+            <a
+              href="/contact"
+              className="mt-8 inline-block rounded-full border-2 border-[#FD853A] px-6 sm:px-10 py-3 sm:py-4 text-sm sm:text-base font-semibold text-[#FD853A] transition hover:bg-[#FD853A] hover:text-white"
+            >
+              Contact Me
+            </a>
+          </div>
         </div>
-
-        {/* PROOF */}
-        <div className="mt-36 rounded-3xl bg-[#272727] px-12 py-16 text-center text-white">
-          <p className="text-sm uppercase tracking-widest text-[#FD853A]">
-            Still unsure?
-          </p>
-
-          <h2 className="mt-4 text-4xl font-extrabold">
-            Don’t take my word for it
-          </h2>
-
-          <p className="mt-4 text-gray-300">
-            Explore the code, run the apps, and see how everything is built.
-          </p>
-
-          <a
-            href="https://github.com/raiyanhossaindev"
-            target="_blank"
-            className="mt-10 inline-flex items-center gap-2
-                       rounded-full bg-[#FD853A]
-                       px-10 py-4 text-sm font-semibold text-white
-                       transition hover:scale-105"
-          >
-            Visit My GitHub →
-          </a>
-        </div>
-
-        {/* CONTACT */}
-        <div className="mt-32 text-center">
-          <h2 className="text-3xl font-bold text-[#272727]">
-            Want to build something together?
-          </h2>
-
-          <p className="mt-4 text-gray-600">
-            I’m open to internships, junior roles, and freelance projects.
-          </p>
-
-          <a
-            href="/contact"
-            className="mt-8 inline-block rounded-full
-                       border-2 border-[#FD853A]
-                       px-10 py-4 text-sm font-semibold text-[#FD853A]
-                       transition hover:bg-[#FD853A] hover:text-white"
-          >
-            Contact Me
-          </a>
-        </div>
-      </div>
-    </section>
+      </section>
     </>
   );
-}
+};
 
-// Separate ProjectCard component for clarity
+// ProjectCard Component
 function ProjectCard({ project, index }) {
   return (
-    <div
-      className={`grid gap-12 items-center md:grid-cols-2 ${
-        index % 2 !== 0 ? "md:flex-row-reverse" : ""
-      }`}
-    >
-      <div className="group relative overflow-hidden rounded-3xl border border-gray-200">
+    <div className={`grid grid-cols-1 gap-8 items-center md:grid-cols-2 md:gap-12 ${index % 2 !== 0 ? "md:flex-row-reverse" : ""}`}>
+      <div className="group relative overflow-hidden rounded-3xl border border-gray-200 h-64 sm:h-80 md:h-auto">
         <img
           src={project.image}
           alt={project.title}
@@ -241,43 +210,24 @@ function ProjectCard({ project, index }) {
       </div>
 
       <div>
-        <span className="text-sm font-semibold text-[#FD853A]">
-          {project.category} Project
-        </span>
-
-        <h2 className="mt-3 text-3xl md:text-4xl font-extrabold text-[#272727]">
-            {project.title.split(" ")[0]}{" "}
-            <span className="text-[#FD853A]">
-                {project.title.split(" ").slice(1).join(" ")}
-            </span>
+        <span className="text-sm font-semibold text-[#FD853A]">{project.category} Project</span>
+        <h2 className="mt-3 text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#272727]">
+          {project.title.split(" ")[0]}{" "}
+          <span className="text-[#FD853A]">{project.title.split(" ").slice(1).join(" ")}</span>
         </h2>
-
-        <p className="mt-4 max-w-xl text-gray-600">{project.description}</p>
+        <p className="mt-4 text-gray-600">{project.description}</p>
 
         <div className="mt-6 flex flex-wrap gap-2">
           {project.tech.map((t) => (
-            <span
-              key={t}
-              className="rounded-full border border-[#FD853A]/40 px-4 py-1 text-xs text-[#FD853A]"
-            >
-              {t}
-            </span>
+            <span key={t} className="rounded-full border border-[#FD853A]/40 px-4 py-1 text-xs text-[#FD853A]">{t}</span>
           ))}
         </div>
 
-        <div className="mt-8 flex gap-6">
-          <a
-            href={project.live}
-            target="_blank"
-            className="font-semibold text-[#272727] underline-offset-4 hover:underline"
-          >
+        <div className="mt-6 flex flex-col sm:flex-row sm:gap-6 gap-2">
+          <a href={project.live} target="_blank" className="font-semibold text-[#272727] underline-offset-4 hover:underline">
             Live Demo →
           </a>
-          <a
-            href={project.github}
-            target="_blank"
-            className="font-semibold text-[#272727] underline-offset-4 hover:underline"
-          >
+          <a href={project.github} target="_blank" className="font-semibold text-[#272727] underline-offset-4 hover:underline">
             GitHub →
           </a>
         </div>
@@ -286,4 +236,4 @@ function ProjectCard({ project, index }) {
   );
 }
 
-export default ProjectsPage;
+export default page;

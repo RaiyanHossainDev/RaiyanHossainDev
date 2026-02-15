@@ -1,73 +1,103 @@
 import Image from 'next/image';
-import Link from 'next/link'
-import React from 'react'
-import { CgArrowTopRight } from "react-icons/cg";
-import Logo from '@/public/images/logo2.png';
+import Link from 'next/link';
+import React from 'react';
 import { FaFacebookSquare, FaInstagramSquare } from "react-icons/fa";
-import { IoLogoWhatsapp } from "react-icons/io";
-import { IoSend } from "react-icons/io5";
+import { IoLogoWhatsapp, IoSend } from "react-icons/io5";
+import Logo from '@/public/images/logo2.png';
 
-
-
-// Footer top margin value = 97px
 const Footer = () => {
   return (
-    <footer className='mt-[20px] bg-[#272727] rounded-t-[24px]'>
-        <div className="container">
-            <div className="footer-col">
-                <div className="footer-head flex justify-between items-center py-[44px]">
-                    <h2 className='text-[64px] text-[#FCFCFD]'>Lets Connect there</h2>
-                    <Link className='relative text-[25px] border-[1px] border-[#FD853A] text-white after:content-["↗"] flex gap-[10px] items-center after:text-[0px] hover:after:text-[36px] after:transition-all after:duration-[.2s] transition-all duration-[.2s] hover:bg-primary rounded-full hover:border-[#D0D5DD] py-[16px] px-[31px] after:leading-1' href={'/contact'}>Hire me</Link>
-                </div>
-                <div className="line w-full h-[2px] bg-[#475467] my-[55px]"></div>
-               <div className="footer-main flex justify-between">
-                    <div>
-                        <Image alt='Logo logo' className='w-[230px]' src={Logo} />
-                        <p className='py-[34px] text-[20px] text-[#FCFCFD] w-[635px]'>I’m a curious creator who enjoys building meaningful digital experiences. I love exploring new ideas, refining details, and turning concepts into simple, elegant solutions that reflect both purpose and personality.</p>
-                        <div className='flex gap-[7px] items-center'>
-                            <a target='_blank' href="https://www.facebook.com/profile.php?id=61578419153609"><FaFacebookSquare className='text-[25px] text-white' /></a>
-                            <a target='_blank' href="https://www.instagram.com/_not0ryan/"><IoLogoWhatsapp className='text-[25px] text-white' /></a>
-                            <a target='_blank' href="+880 1712-871414"><FaInstagramSquare className='text-[25px] text-white' /></a>
-                        </div>
-                    </div>
-                    <div className='flex gap-[33px]'>
-                        <div>
-                            <p className='text-[#FD853A] text-[20px] mb-[28px]'>Navigation</p>
-                            <ul className='flex flex-col gap-[20px]'>
-                                <li><Link className='text-[#FCFCFD] text-[16px]' href={"/"}>Home</Link></li>
-                                <li><Link className='text-[#FCFCFD] text-[16px]' href={"#"}>About Us</Link></li>
-                                <li><Link className='text-[#FCFCFD] text-[16px]' href={"#"}>Service</Link></li>
-                                <li><Link className='text-[#FCFCFD] text-[16px]' href={"#"}>Resume</Link></li>
-                                <li><Link className='text-[#FCFCFD] text-[16px]' href={"#"}>Project</Link></li>
-                            </ul>
-                        </div>
-                        <div>
-                            <p className='text-[#FD853A] text-[20px] mb-[28px]'>Contact</p>
-                            <ul className='flex flex-col gap-[20px]'>
-                                <li><a className='text-[#FCFCFD] text-[16px]' href={"tel:+8801712871414"}>+880 1712-871414</a></li>
-                                <li><a className='text-[#FCFCFD] text-[16px]' href={"mailto:astralfog2@gmail.com"}>astralfog2@gmail.com</a></li>
-                                <li><a className='text-[#FCFCFD] text-[16px]' href={"mailto:raiyanrevil@outlook.com"}>raiyanrevil@outlook.com</a></li>
-                                <li><a className='text-[#FCFCFD] text-[16px]' href={"https://raiyan-hossain-xi.vercel.app/"}>raiyan-hossain-xi.vercel.app/</a></li>
-                            </ul>
-                        </div>
-                        <div>
-                            <p className='text-[#FD853A] text-[20px] mb-[28px]'>Get the latest information</p>
-                            <div className='w-[304px] h-[51px] rounded-[14px] overflow-hidden flex items-center'>
-                                <input className='outline-none border-none w-full h-full bg-white pl-[14px] placeholder:text-black text-[16px]' placeholder='Email Address' type="email" />
-                                <button className='cursor-pointer px-[13px] bg-primary h-full'><IoSend className='text-[#FCFCFD] text-xl' /></button>
-                            </div>
-                        </div>
-                    </div>
-               </div>
-                <div className="line w-full h-[2px] bg-[#475467] my-[40px]"></div>
-                <div className='pb-[25px] flex justify-between' >
-                    <p className='text-[16px] text-white'>Copyright© 2025 Jayesh. All Rights Reserved.</p>
-                    <a href='#' className='text-[16px] text-white hover:underline'>User Terms & Conditions | Privacy Policy</a>
-                </div>
-            </div>
+    <footer className='mt-5 bg-[#272727] rounded-t-[24px]'>
+      {/* Container */}
+      <div className="container mx-auto px-4 sm:px-6 lg:px-0">
+        {/* Top Section */}
+        <div className="flex flex-col md:flex-row justify-between items-center py-10 md:py-12 gap-6 md:gap-0">
+          <h2 className='text-3xl sm:text-4xl md:text-5xl font-bold text-white text-center md:text-left'>
+            Lets Connect there
+          </h2>
+          <Link 
+            href={'/contact'}
+            className='relative text-base sm:text-lg md:text-xl border border-[#FD853A] text-white flex gap-3 items-center rounded-full py-3 px-6 sm:px-8 hover:bg-primary transition'
+          >
+            Hire me <span className="text-xl">↗</span>
+          </Link>
         </div>
+
+        <div className="w-full h-[2px] bg-[#475467] my-10"></div>
+
+        {/* Main Footer */}
+        <div className="flex flex-col lg:flex-row justify-between gap-10 lg:gap-20">
+          {/* Logo & About */}
+          <div className="flex-1">
+            <Image alt='Logo' src={Logo} className='w-32 sm:w-40 mb-6' />
+            <p className='text-sm sm:text-base text-[#FCFCFD] mb-6'>
+              I’m a curious creator who enjoys building meaningful digital experiences. I love exploring new ideas, refining details, and turning concepts into simple, elegant solutions that reflect both purpose and personality.
+            </p>
+            <div className='flex gap-4'>
+              <a target='_blank' href="https://www.facebook.com/profile.php?id=61578419153609">
+                <FaFacebookSquare className='text-2xl sm:text-3xl text-white' />
+              </a>
+              <a target='_blank' href="https://www.instagram.com/_not0ryan/">
+                <IoLogoWhatsapp className='text-2xl sm:text-3xl text-white' />
+              </a>
+              <a target='_blank' href="+8801712871414">
+                <FaInstagramSquare className='text-2xl sm:text-3xl text-white' />
+              </a>
+            </div>
+          </div>
+
+          {/* Navigation & Contact */}
+          <div className="flex flex-col sm:flex-row gap-10 flex-1">
+            {/* Navigation */}
+            <div>
+              <p className='text-[#FD853A] text-lg mb-6'>Navigation</p>
+              <ul className='flex flex-col gap-3'>
+                <li><Link className='text-white text-sm sm:text-base' href={"/"}>Home</Link></li>
+                <li><Link className='text-white text-sm sm:text-base' href={"#"}>About Us</Link></li>
+                <li><Link className='text-white text-sm sm:text-base' href={"#"}>Service</Link></li>
+                <li><Link className='text-white text-sm sm:text-base' href={"#"}>Resume</Link></li>
+                <li><Link className='text-white text-sm sm:text-base' href={"#"}>Project</Link></li>
+              </ul>
+            </div>
+
+            {/* Contact */}
+            <div>
+              <p className='text-[#FD853A] text-lg mb-6'>Contact</p>
+              <ul className='flex flex-col gap-3'>
+                <li><a className='text-white text-sm sm:text-base' href={"tel:+8801712871414"}>+880 1712-871414</a></li>
+                <li><a className='text-white text-sm sm:text-base' href={"mailto:astralfog2@gmail.com"}>astralfog2@gmail.com</a></li>
+                <li><a className='text-white text-sm sm:text-base' href={"mailto:raiyanrevil@outlook.com"}>raiyanrevil@outlook.com</a></li>
+                <li><a className='text-white text-sm sm:text-base' href={"https://raiyan-hossain-xi.vercel.app/"}>raiyan-hossain-xi.vercel.app/</a></li>
+              </ul>
+            </div>
+
+            {/* Newsletter */}
+            <div>
+              <p className='text-[#FD853A] text-lg mb-6'>Get the latest information</p>
+              <div className='flex w-full max-w-xs sm:max-w-sm h-12 rounded-lg overflow-hidden'>
+                <input 
+                  type="email" 
+                  placeholder='Email Address' 
+                  className='w-full h-full px-4 text-sm sm:text-base outline-none bg-white'
+                />
+                <button className='bg-primary px-4 flex items-center justify-center'>
+                  <IoSend className='text-white text-lg sm:text-xl' />
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="w-full h-[2px] bg-[#475467] my-10"></div>
+
+        {/* Bottom */}
+        <div className='flex flex-col md:flex-row justify-between items-center pb-6 gap-3 md:gap-0 text-sm sm:text-base'>
+          <p className='text-white'>Copyright© 2025 Jayesh. All Rights Reserved.</p>
+          <a href='#' className='text-white hover:underline'>User Terms & Conditions | Privacy Policy</a>
+        </div>
+      </div>
     </footer>
   )
 }
 
-export default Footer
+export default Footer;

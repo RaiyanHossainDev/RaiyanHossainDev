@@ -6,12 +6,10 @@ export const metadata = {
   description: "View the professional resume of Raiyan H., showcasing education, skills, projects, and work experience as a full-stack developer.",
 }
 
-const revalidate = 43200 // Revalidate every 12 hours (43200 seconds)
-
 const page = () => {
   return (
-    <section className="min-h-screen bg-[#272727] text-white px-4 sm:px-6 md:px-12 py-16 md:pt-40 md:pb-20">
-      <div className="mx-auto max-w-6xl">
+    <section className="min-h-screen bg-[#272727] text-white px-4 sm:px-6 lg:px-0 py-16 md:pt-40 md:pb-20">
+      <div className="container mx-auto max-w-6xl">
 
         {/* Header */}
         <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-6 mb-12 md:mb-16">
@@ -37,10 +35,10 @@ const page = () => {
 
         {/* Main Resume Card */}
         <div className="rounded-3xl border border-white/10 bg-[#1f1f1f] p-6 sm:p-8 md:p-12">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-14">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-10 md:gap-14">
 
             {/* Left Column */}
-            <div className="space-y-10 md:space-y-12">
+            <div className="space-y-8 sm:space-y-10 md:space-y-12">
 
               {/* Skills */}
               <div>
@@ -77,13 +75,13 @@ const page = () => {
             </div>
 
             {/* Right Column */}
-            <div className="space-y-10 md:space-y-12">
+            <div className="space-y-8 sm:space-y-10 md:space-y-12">
 
               {/* About Me */}
               <div>
                 <h2 className="text-xl sm:text-2xl font-semibold text-[#FD853A] mb-3 sm:mb-4">About Me</h2>
                 <p className="text-gray-300 leading-relaxed text-sm sm:text-base md:text-base">
-                  I am a passionate web developer from Bangladesh. I have completed frontend and backend
+                  My name is Raiyan Hossain. I am a passionate web developer from Bangladesh. I have completed frontend and backend
                   development courses and enjoy building modern web applications using React, Next.js,
                   Node.js, and MongoDB. I am also continuing my formal studies.
                 </p>
@@ -106,6 +104,5 @@ const page = () => {
     </section>
   )
 }
-
 
 export default page

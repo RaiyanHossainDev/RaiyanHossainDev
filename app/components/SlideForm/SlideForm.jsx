@@ -3,36 +3,56 @@ import { usePathname } from 'next/navigation';
 import React, { useState } from 'react'
 import ContactForm from '../ContactForm/ContactForm';
 
-
 const SlideForm = () => {
-    const [isOpen, setIsOpen] = useState(false);
-    let pathname = usePathname();
+  const [isOpen, setIsOpen] = useState(false);
+  const pathname = usePathname();
 
-return (
-        <section>
-            {
-                pathname !== '/contact' &&
-                // Floating CTA to open contact form
-                <>
-                    <div className={`fixed top-[50%] translate-y-[-50%] right-0 ${isOpen ? 'translate-x-0' : 'translate-x-full'} w-[450px] bg-primary h-[650px] rounded-l-4xl flex justify-center items-center p-[40px] transition-all duration-[.4s] ease-in-out z-[999]`}>
-                        <ContactForm />
-                    </div>
-                    <div onClick={() => setIsOpen(!isOpen)} className="fixed z-[999] overflow-hidden group bottom-8 cursor-pointer right-8 w-16 h-16 rounded-full bg-black text-white flex items-center shadow-lg hover:w-[170px] transition-all duration-[0.5s] text-lg">
-                        <span className='ml-[18px] group-hover:ml-[7px] transition-all duration-[.5s]'>
-                        ✉️
-                        </span>
-                        <span className='w-[180px] absolute left-[70px] group-hover:left-[40px] transition-all duration-[0.5s] opacity-0 group-hover:opacity-100'>
-                            {
-                                isOpen?
-                                "Close Form"
-                                :
-                                "Send Message"
-                            }
-                        </span>
-                    </div>
-                </>
-            }
-        </section>
-)}
+  return (
+    <section>
+      {pathname !== '/contact' && (
+        <>
+          {/* Sliding Contact Form */}
+          <div
+            className={`
+              fixed top-1/2 right-0 
+              transform -translate-y-1/2 
+              ${isOpen ? 'translate-x-0' : 'translate-x-full'}
+              w-full sm:w-[400px] md:w-[450px] 
+              h-[80vh] sm:h-[650px] 
+              bg-primary rounded-l-3xl 
+              flex justify-center items-center p-6 sm:p-10 
+              transition-transform duration-500 ease-in-out z-50
+            `}
+          >
+            <ContactForm />
+          </div>
 
-export default SlideForm
+          {/* Floating CTA Button */}
+          <div
+            onClick={() => setIsOpen(!isOpen)}
+            className={`
+              fixed bottom-6 right-6 
+              z-50 overflow-hidden 
+              group cursor-pointer w-12 h-12
+              md:w-16 md:h-16 rounded-full bg-black 
+              text-white flex items-center 
+              justify-center  shadow-lg
+              hover:w-[150px] sm:hover:w-[170px] 
+              transition-all duration-500 text-sm
+              md:text-lg
+            `}
+          >
+            <span className='duration-500 group-hover:opacity-0 transition-all'>
+              ✉️
+            </span>
+            <span className='absolute left-16 sm:left-20 group-hover:left-[50%] group-hover:translate-x-[-50%] transition-all duration-500 opacity-0 group-hover:opacity-100 text-sm sm:text-base whitespace-nowrap'>
+              {isOpen ? "Close Form" : "Send Message"}
+            </span>
+          </div>
+        </>
+      )}
+    </section>
+  );
+}
+
+export default SlideForm;

@@ -51,46 +51,57 @@ const ContactForm = () => {
 
 
   return (
-          <form onSubmit={handleSubmit} className={`bg-white shadow-xl rounded-2xl p-8 flex flex-col gap-4 w-full`}>
-              <h3 className="text-xl font-medium text-black">Send me a message</h3>
+    <form
+      onSubmit={handleSubmit}
+      className="bg-white shadow-xl rounded-2xl p-6 sm:p-8 flex flex-col gap-4 w-full max-w-md mx-auto overflow-y-auto"
+    >
+      <h3 className="text-lg sm:text-xl font-medium text-black text-center sm:text-left">
+        Send me a message
+      </h3>
 
-              <input
-                value={formData.name}
-                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                placeholder="Your name"
-                className="w-full h-[50px] px-4 rounded-xl border border-gray-200 focus:border-black focus:ring-1 focus:ring-black outline-none transition"
-              />
-              <input
-                value={formData.email}
-                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                type="email"
-                placeholder="Email address"
-                className="w-full h-[50px] px-4 rounded-xl border border-gray-200 focus:border-black focus:ring-1 focus:ring-black outline-none transition"
-              />
-              <input
-                value={formData.phone}
-                onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                type="tel"
-                placeholder="Phone number"
-                className="w-full h-[50px] px-4 rounded-xl border border-gray-200 focus:border-black focus:ring-1 focus:ring-black outline-none transition"
-              />
-              <textarea
-                value={formData.message}
-                onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                placeholder="Tell me about your project"
-                className="w-full h-[150px] px-4 py-3 rounded-xl border border-gray-200 focus:border-black focus:ring-1 focus:ring-black outline-none resize-none transition"
-              />
+      <input
+        value={formData.name}
+        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+        placeholder="Your name"
+        className="w-full h-12 sm:h-14 px-4 rounded-xl border border-gray-200 focus:border-black focus:ring-1 focus:ring-black outline-none transition"
+      />
 
-              <button
-                type="submit"
-                disabled={isSubmitting}
-                className="w-full cursor-pointer bg-black text-white py-3 rounded-xl font-medium hover:scale-[1.03] active:scale-[0.98] transition shadow disabled:opacity-50"
-              >
-                {isSubmitting ? 'Sending...' : 'Send message'}
-              </button>
+      <input
+        value={formData.email}
+        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+        type="email"
+        placeholder="Email address"
+        className="w-full h-12 sm:h-14 px-4 rounded-xl border border-gray-200 focus:border-black focus:ring-1 focus:ring-black outline-none transition"
+      />
 
-              <p className="text-center text-sm text-gray-500">I usually respond within 24 hours</p>
-        </form>
+      <input
+        value={formData.phone}
+        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+        type="tel"
+        placeholder="Phone number"
+        className="w-full h-12 sm:h-14 px-4 rounded-xl border border-gray-200 focus:border-black focus:ring-1 focus:ring-black outline-none transition"
+      />
+
+      <textarea
+        value={formData.message}
+        onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+        placeholder="Tell me about your project"
+        className="w-full h-36 sm:h-44 px-4 py-3 rounded-xl border border-gray-200 focus:border-black focus:ring-1 focus:ring-black outline-none resize-none transition"
+      />
+
+      <button
+        type="submit"
+        disabled={isSubmitting}
+        className="w-full bg-black text-white py-3 sm:py-4 rounded-xl font-medium hover:scale-[1.03] active:scale-[0.98] transition shadow disabled:opacity-50"
+      >
+        {isSubmitting ? 'Sending...' : 'Send message'}
+      </button>
+
+      <p className="text-center text-sm text-gray-500">
+        I usually respond within 24 hours
+      </p>
+    </form>
+
   )
 }
 
