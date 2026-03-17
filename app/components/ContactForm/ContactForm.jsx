@@ -53,7 +53,7 @@ const ContactForm = () => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="bg-white shadow-xl rounded-2xl p-6 sm:p-8 flex flex-col gap-4 w-full max-w-md mx-auto overflow-y-auto"
+      className="bg-white shadow-xl rounded-2xl p-6 sm:p-8 flex flex-col gap-2 w-full max-w-md mx-auto overflow-y-auto"
     >
       <h3 className="text-lg sm:text-xl font-medium text-black text-center sm:text-left">
         Send me a message
@@ -100,6 +100,12 @@ const ContactForm = () => {
       <p className="text-center text-sm text-gray-500">
         I usually respond within 24 hours
       </p>
+      {
+        isSubmitting&&
+          <p className="text-center text-xs text-red-500">
+            The sending may take a little time because of free hosting server, so please wait for a moment after clicking the send button.
+          </p>
+      }
     </form>
 
   )

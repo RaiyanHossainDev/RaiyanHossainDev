@@ -45,7 +45,7 @@ const SlideForm = () => {
             <span className='duration-500 group-hover:opacity-0 transition-all'>
               ✉️
             </span>
-            <span className='absolute left-16 sm:left-20 group-hover:left-[50%] group-hover:translate-x-[-50%] transition-all duration-500 opacity-0 group-hover:opacity-100 text-sm sm:text-base whitespace-nowrap'>
+            <span className='absolute cursor-pointer left-16 sm:left-20 group-hover:left-[50%] group-hover:translate-x-[-50%] transition-all duration-500 opacity-0 group-hover:opacity-100 text-sm sm:text-base whitespace-nowrap'>
               {isOpen ? "Close Form" : "Send Message"}
             </span>
           </div>
