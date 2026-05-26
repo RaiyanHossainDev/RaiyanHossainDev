@@ -1,6 +1,7 @@
 'use client'
 import React, { useState } from 'react'
 import { Bounce, toast } from 'react-toastify';
+import Translator from '../Translator/Translator';
 
 
 const ContactForm = () => {
@@ -53,10 +54,10 @@ const ContactForm = () => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="bg-white shadow-xl rounded-2xl p-6 sm:p-8 flex flex-col gap-2 w-full max-w-md mx-auto overflow-y-auto"
+      className="bg-white shadow-xl rounded-2xl p-6 sm:p-8 flex flex-col gap-2 w-full mx-auto overflow-y-auto"
     >
       <h3 className="text-lg sm:text-xl font-medium text-black text-center sm:text-left">
-        Send me a message
+        <Translator english={"Send me a message"} bangla={"আমাকে একটি বার্তা পাঠান"} />
       </h3>
 
       <input
@@ -86,7 +87,7 @@ const ContactForm = () => {
         value={formData.message}
         onChange={(e) => setFormData({ ...formData, message: e.target.value })}
         placeholder="Tell me about your project"
-        className="w-full h-36 sm:h-44 px-4 py-3 rounded-xl border border-gray-200 focus:border-black focus:ring-1 focus:ring-black outline-none resize-none transition"
+        className="w-full h-30 sm:h-44 px-4 py-3 rounded-xl border border-gray-200 focus:border-black focus:ring-1 focus:ring-black outline-none resize-none transition"
       />
 
       <button
@@ -98,12 +99,12 @@ const ContactForm = () => {
       </button>
 
       <p className="text-center text-sm text-gray-500">
-        I usually respond within 24 hours
+        <Translator english={"I usually respond within 24 hours"} bangla={"আমি সাধারণত 24 ঘন্টার মধ্যে উত্তর দিই"} />
       </p>
       {
         isSubmitting&&
           <p className="text-center text-xs text-red-500">
-            The sending may take a little time because of free hosting server, so please wait for a moment after clicking the send button.
+            <Translator english={"Please wait while your message is being sent..."} bangla={"আপনার বার্তা পাঠানো হচ্ছে, অনুগ্রহ করে অপেক্ষা করুন..."} />
           </p>
       }
     </form>

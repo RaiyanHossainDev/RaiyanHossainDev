@@ -66,30 +66,6 @@ const allProjects = [
     github: "https://github.com/RaiyanHossainDev/Protfollio/tree/main/smothie",
   },
   // Full-Stack Applications
-  {
-    title: { english: "Real-Time Chat Application", bangla: "রিয়েল-টাইম চ্যাট অ্যাপ্লিকেশন" },
-    category: "Full-Stack",
-    description: {
-      english: "Full-stack chat app with authentication, rooms, and live messaging.",
-      bangla: "অথেন্টিকেশন, রুম এবং লাইভ মেসেজিং সহ ফুল-স্ট্যাক চ্যাট অ্যাপ।"
-    },
-    tech: ["React", "Node.js", "Socket.io", "MongoDB"],
-    image: "/images/prot.png",
-    live: "#",
-    github: "#",
-  },
-  {
-    title: { english: "Task Manager App", bangla: "টাস্ক ম্যানেজার অ্যাপ" },
-    category: "Full-Stack",
-    description: {
-      english: "Task management app with Firebase backend and real-time updates.",
-      bangla: "Firebase ব্যাকএন্ড এবং রিয়েল-টাইম আপডেট সহ টাস্ক ম্যানেজমেন্ট অ্যাপ।"
-    },
-    tech: ["Next.js", "Firebase", "React"],
-    image: "/images/prot.png",
-    live: "#",
-    github: "#",
-  },
 ];
 
 const categories = ["All", "Landing", "UI", "Full-Stack"];
@@ -103,6 +79,7 @@ const page = () => {
     return acc;
   }, {});
 
+  
   return (
     <>
       {/* Top Cover */}
@@ -174,9 +151,46 @@ const page = () => {
                   </div>
                 </div>
               ))
-              : groupedProjects[selectedCategory]?.map((project, i) => (
-                <ProjectCard key={project.title.english} project={project} index={i} />
-              ))
+              : 
+                groupedProjects[selectedCategory]? 
+                    groupedProjects[selectedCategory]?.map((project, i) => (
+                        <ProjectCard key={project.title.english} project={project} index={i} />
+                    ))
+                  :
+                    <div className="flex items-center justify-center py-20">
+                      <div className="group relative overflow-hidden rounded-3xl border border-white/10 bg-zinc-900/80 p-10 backdrop-blur-xl transition-all duration-500 hover:border-[#FD853A]/40 hover:shadow-[0_0_50px_rgba(253,133,58,0.15)]">
+                        
+                        {/* Glow */}
+                        <div className="absolute inset-0 bg-gradient-to-br from-[#FD853A]/10 via-transparent to-[#FD853A]/10 opacity-0 transition-opacity duration-500 group-hover:opacity-100" />
+
+                        {/* Intersection Lines */}
+                        <div className="absolute left-1/2 top-0 h-full w-px -translate-x-1/2 bg-gradient-to-b from-transparent via-[#FD853A]/40 to-transparent" />
+                        
+                        <div className="absolute top-1/2 left-0 h-px w-full -translate-y-1/2 bg-gradient-to-r from-transparent via-[#FD853A]/40 to-transparent" />
+
+                        {/* Center Glow */}
+                        <div className="absolute left-1/2 top-1/2 h-24 w-24 -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#FD853A]/20 blur-3xl" />
+
+                        {/* Content */}
+                        <div className="relative z-10 text-center">
+                          <p className="mb-3 text-sm uppercase tracking-[0.3em] text-[#FD853A]">
+                            Empty State
+                          </p>
+
+                          <h2 className="max-w-md text-2xl font-bold leading-relaxed text-white md:text-3xl">
+                            There is no content available for the category:
+                          </h2>
+
+                          <span className="mt-4 inline-block rounded-full border border-[#FD853A]/30 bg-[#FD853A]/10 px-5 py-2 text-sm font-medium text-[#FD853A]">
+                            {selectedCategory}
+                          </span>
+
+                          <p className="mt-6 text-sm text-zinc-400">
+                            Try exploring another category or check back later.
+                          </p>
+                        </div>
+                      </div>
+                    </div>
             }
           </div>
 

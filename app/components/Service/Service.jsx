@@ -31,30 +31,23 @@ const Service = () => {
         </div>
 
         {/* Service Cards */}
-        <div className="flex flex-col md:flex-row flex-wrap gap-6 md:gap-8 justify-center lg:justify-between">
+        <div className="flex flex-col md:flex-row flex-wrap gap-6  justify-center lg:justify-between">
           
           {services.map((service, index) => (
             <div
               key={index}
-              className="relative flex-1 max-w-sm md:max-w-[416px] h-auto md:h-[508px] rounded-3xl border-2 border-[#686868] backdrop-blur bg-white/20 flex flex-col items-center text-center p-6 sm:p-8"
+              className="relative flex-1 max-w-sm md:max-w-[416px] h-auto rounded-3xl border-2 border-[#686868] backdrop-blur bg-white/20 flex flex-col items-center text-center p-6 sm:pb-8"
             >
               <h3 className='text-white text-2xl sm:text-3xl md:text-4xl font-semibold mb-2 sm:mb-4'>
                 <Translator english={service.title.english} bangla={service.title.bangla} />
               </h3>
               <div className="w-full h-[2px] bg-[#999999] mb-4 sm:mb-6"></div>
               
-              {index !== 2 ? (
-                <img className='w-full h-auto rounded-lg' src={service.img} alt={service.title.english} />
-              ) : (
-                <>
-                  <img className='w-full h-auto rounded-lg mb-4' src="/images/lp.png" alt="landing preview" />
-                  <img className='absolute bottom-0 w-full rounded-2xl' src={service.img} alt="server" />
-                </>
-              )}
+              <img width={337} src={service.img} alt={service.title.english} />
 
               <Link
-                href='#'
-                className='absolute bottom-4 right-4 bg-[#1D2939] rounded-full flex justify-center items-center w-16 h-16 sm:w-18 sm:h-18 hover:scale-105 transition'
+                href='/portfolio'
+                className='absolute top-[76%] right-[12%] bg-[#1D2939] rounded-full flex justify-center items-center w-10 h-10 lg:w-14 lg:h-14 hover:scale-105 transition'
               >
                 <TfiArrowTopRight className='text-white text-xl sm:text-2xl' />
               </Link>

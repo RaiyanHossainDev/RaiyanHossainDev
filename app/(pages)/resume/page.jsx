@@ -9,7 +9,7 @@ export const metadata = {
 
 const page = () => {
   return (
-    <section className="min-h-screen bg-[#272727] text-white px-4 sm:px-6 lg:px-0 py-16 md:pt-40 md:pb-20">
+    <section className="min-h-screen bg-[#272727] text-white px-4 pt-40 sm:px-6 lg:px-0 py-16 md:pt-40 ">
       <div className="container mx-auto max-w-6xl">
 
         {/* Header */}
@@ -26,7 +26,7 @@ const page = () => {
 
           {/* Download Button */}
           <a
-            href="/images/resume.png"
+            href="/images/RaiyanHossainResume.png"
             download
             className="group relative inline-flex items-center justify-center overflow-hidden rounded-xl bg-[#FD853A] px-6 sm:px-7 py-2 sm:py-3 font-semibold text-[#272727] text-sm sm:text-base transition hover:scale-105"
           >

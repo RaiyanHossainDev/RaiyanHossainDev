@@ -17,10 +17,10 @@ const WorkExp = () => {
         </div>
 
         {/* Timeline / Experience */}
-        <div className="flex flex-col lg:flex-row lg:items-start gap-12 lg:gap-16">
+        <div className="flex justify-between flex-col lg:flex-row lg:items-start gap-12 lg:gap-16">
 
           {/* Left Column - Institutions & Dates */}
-          <div className="flex flex-col gap-8 md:gap-28 flex-1">
+          <div className=" hidden lg:flex flex-col gap-8 md:gap-28">
             <div>
               <h3 className='text-[#E42625] text-2xl sm:text-3xl md:text-4xl font-semibold'>
                 <Translator english="Creative IT Institute" bangla="ক্রিয়েটিভ আইটি ইনস্টিটিউট" />
@@ -53,11 +53,19 @@ const WorkExp = () => {
           </div>
 
           {/* Right Column - Roles & Descriptions */}
-          <div className="flex flex-col gap-8 md:gap-8 flex-1">
-            <div>
-              <h3 className='text-[#344054] text-2xl sm:text-3xl md:text-4xl font-semibold'>
+          <div className="flex flex-col gap-8 md:gap-8 ">
+            <div className=''>
+              <h3 className='text-[#344054] text-3xl md:text-4xl font-semibold'>
                 <Translator english="Frontend Developer" bangla="ফ্রন্টএন্ড ডেভেলপার" />
               </h3>
+              <div className='lg:hidden'>
+                <h3 className='text-[#E42625] text-2xl sm:text-3xl  font-semibold'>
+                  <Translator english="Creative IT Institute" bangla="ক্রিয়েটিভ আইটি ইনস্টিটিউট" />
+                </h3>
+                <p className='text-[#6d6d6d] text-[13px] sm:text-base'>
+                  14th May, 2024 - 29 January, 2025
+                </p>
+              </div>
               <p className='text-[#98A2B3] text-sm sm:text-base mt-2 md:max-w-md'>
                 <Translator 
                   english="Completed Frontend Development at Creative IT Institute, starting with HTML and CSS, then diving into React, Tailwind CSS, Bootstrap, and Redux to build responsive, dynamic, and modern web interfaces." 
@@ -66,9 +74,17 @@ const WorkExp = () => {
               </p>
             </div>
             <div>
-              <h3 className='text-[#344054] text-2xl sm:text-3xl md:text-4xl font-semibold'>
+              <h3 className='text-[#344054] text-3xl sm:text-3xl md:text-4xl font-semibold'>
                 <Translator english="Backend Developer" bangla="ব্যাকএন্ড ডেভেলপার" />
               </h3>
+              <div className='lg:hidden'>
+                <h3 className='text-[#E42625] text-2xl sm:text-3xl  font-semibold'>
+                  <Translator english="Creative IT Institute" bangla="ক্রিয়েটিভ আইটি ইনস্টিটিউট" />
+                </h3>
+                <p className='text-[#6d6d6d] text-[13px] sm:text-base'>
+                  22nd May, 2025 - 28 November, 2025
+                </p>
+              </div>
               <p className='text-[#98A2B3] text-sm sm:text-base mt-2 md:max-w-md'>
                 <Translator 
                   english="Completed Backend Development at Creative IT Institute, mastering Node.js, Express.js, MongoDB, and Socket.io, while building full-featured applications with CRUD operations and real-time functionality." 
@@ -77,9 +93,17 @@ const WorkExp = () => {
               </p>
             </div>
             <div>
-              <h3 className='text-[#344054] text-2xl sm:text-3xl md:text-4xl font-semibold'>
+              <h3 className='text-[#344054] text-3xl sm:text-3xl md:text-4xl font-semibold'>
                 <Translator english="Certified Ethical Hacker" bangla="সার্টিফাইড এথিক্যাল হ্যাকার" />
               </h3>
+              <div className='lg:hidden'>
+                <h3 className='text-[#E42625] text-2xl sm:text-3xl  font-semibold'>
+                  <Translator english="Creative IT Institute" bangla="ক্রিয়েটিভ আইটি ইনস্টিটিউট" />
+                </h3>
+                <p className='text-[#6d6d6d] text-[13px] sm:text-base'>
+                  6th December, 2025 (Ongoing)
+                </p>
+              </div>
               <p className='text-[#98A2B3] text-sm sm:text-base mt-2 md:max-w-md'>
                 <Translator 
                   english="Ongoing Cyber Security course at Creative IT Institute, focused on system security, data protection, and ethical hacking fundamentals." 
