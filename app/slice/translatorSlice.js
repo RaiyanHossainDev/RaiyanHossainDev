@@ -1,9 +1,16 @@
 import { createSlice } from '@reduxjs/toolkit'
 
+const getInitialLanguage = () => {
+  if (typeof window !== 'undefined') {
+    return localStorage.getItem('lang') || 'en'
+  }
+  return 'en'
+}
+
 const translatorSlice = createSlice({
   name: 'translator',
   initialState: {
-    language: localStorage?.getItem('lang') || 'en',
+    language: getInitialLanguage(),
   },
   reducers: {
     toggleLanguage: (state) => {

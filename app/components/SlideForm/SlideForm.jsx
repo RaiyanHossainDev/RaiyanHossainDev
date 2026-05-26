@@ -6,20 +6,8 @@ import Translator from '../Translator/Translator';
 
 const SlideForm = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [buttonOpen, setButtonOpen] = useState(false);
   const pathname = usePathname();
 
-  
-
-  if (window.innerWidth > 640) {
-      var intervalId = setInterval(() => {
-        if (buttonOpen === false) {
-          setButtonOpen(true);
-        } else {                
-          setButtonOpen(false);
-        }
-      }, 8000);
-  }
   
 
 
@@ -45,26 +33,23 @@ const SlideForm = () => {
 
           {/* Floating CTA Button */}
           <div
-            onClick={() => {
-              setIsOpen(!isOpen)
-              clearInterval(intervalId);
-            }}
+            onClick={() =>setIsOpen(!isOpen)}
             className={`
               fixed bottom-6 right-6 
               z-50 overflow-hidden 
-              group cursor-pointer w-12 h-12
+              group cursor-pointer w-12 h-12 md:w-16
                md:h-16 rounded-full bg-black 
               text-white flex items-center 
               justify-center  shadow-lg
               hover:w-[150px] sm:hover:w-[170px] 
               transition-all duration-500 text-sm
-              md:text-lg ${ buttonOpen ? 'w-[150px] sm:w-[170px]' : 'md:w-16' }
+              md:text-lg
             `}
           >
-            <span className={`${buttonOpen?'opacity-0':''} duration-500 group-hover:opacity-0 transition-all`}>
+            <span className={`duration-500 group-hover:opacity-0 transition-all`}>
               ✉️
             </span>
-            <span className={`${buttonOpen?'left-[50%] translate-x-[-50%] opacity-100':''} absolute cursor-pointer left-16 sm:left-20 group-hover:left-[50%] group-hover:translate-x-[-50%] transition-all duration-500 opacity-0 group-hover:opacity-100 text-sm sm:text-base whitespace-nowrap`}>
+            <span className={`absolute cursor-pointer left-16 sm:left-20 group-hover:left-[50%] group-hover:translate-x-[-50%] transition-all duration-500 opacity-0 group-hover:opacity-100 text-sm sm:text-base whitespace-nowrap`}>
               {isOpen ? <Translator english="Close Form" bangla="ফর্ম বন্ধ করুন" /> : <Translator english="Send Message" bangla="বার্তা পাঠান" />}
             </span>
           </div>
