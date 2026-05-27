@@ -221,7 +221,7 @@ const page = () => {
               <Translator english="Want to build something together?" bangla="একসাথে কিছু তৈরি করতে চান?" />
             </h2>
             <p className="mt-4 text-gray-600 text-base sm:text-lg">
-              <Translator english="I’m open to internships, junior roles, and freelance projects."
+              <Translator english="I’m open to junior roles, and freelance projects."
                          bangla="আমি ইন্টার্নশিপ, জুনিয়র রোল এবং ফ্রিল্যান্স প্রকল্পে খোলা আছি।" />
             </p>
             <a

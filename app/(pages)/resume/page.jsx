@@ -9,6 +9,7 @@ export const metadata = {
 
 const page = () => {
   return (
+    <>
     <section className="min-h-screen bg-[#272727] text-white px-4 pt-40 sm:px-6 lg:px-0 py-16 md:pt-40 ">
       <div className="container mx-auto max-w-6xl">
 
@@ -119,6 +120,23 @@ const page = () => {
         </div>
       </div>
     </section>
+    {/* Contact Section */}
+        <div className="my-32 text-center px-4 sm:px-0">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#272727]">
+              <Translator english="Want to build something together?" bangla="একসাথে কিছু তৈরি করতে চান?" />
+            </h2>
+            <p className="mt-4 text-gray-600 text-base sm:text-lg">
+              <Translator english="I’m open to junior roles, and freelance projects."
+                         bangla="আমি ইন্টার্নশিপ, জুনিয়র রোল এবং ফ্রিল্যান্স প্রকল্পে খোলা আছি।" />
+            </p>
+            <a
+              href="/contact"
+              className="mt-8 inline-block rounded-full border-2 border-[#FD853A] px-6 sm:px-10 py-3 sm:py-4 text-sm sm:text-base font-semibold text-[#FD853A] transition hover:bg-[#FD853A] hover:text-white"
+            >
+              <Translator english="Contact Me" bangla="আমাকে যোগাযোগ করুন" />
+            </a>
+        </div>
+    </>
   )
 }
 
